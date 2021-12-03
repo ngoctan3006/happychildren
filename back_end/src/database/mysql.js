@@ -1,16 +1,15 @@
-var mysql = require("mysql");
+import mysql from 'mysql'
 
-//local mysql db connection
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "happychildrenDB",
-  insecureAuth: true,
-});
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'Tan30062000',
+  database: 'happychildren',
+})
+
 // connect to database
 connection.connect(function (err) {
-  if (err) throw err;
-});
+  if (err) throw err
+})
 
-module.exports = connection;
+export default connection
