@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* News */
+/* Tags */
+/* Big tag */
+.BigTag {
+  background-color: #61dafb;
+  border-radius: 25;
+  display: inline-block;
+  font-size: x-large;
+  font-style: normal;
+  font-weight: bold;
+  color: #EB6446;
+}
