@@ -17,7 +17,7 @@ users.get('/', (req, res) => {
 
 users.post('/register', (req, res) => {
     const data = req.body
-    connection.query('insert into happychildren.user_account (username, password) values (?, ?)', [data.username, data.password], (err, result) => {
+    connection.query('insert into happychildren.user_account (username, password, fullName, email) values (?, ?, ?, ?)', [data.username, data.password, data.fullName, data.email], (err, result) => {
         if(err) {
             if(err.code === 'ER_DUP_ENTRY') {
                 res.status(401).send({
@@ -45,6 +45,32 @@ users.post('/login', (req, res) => {
             })
         } else res.status(200).send({
             message: 'login success'
+        })
+    })
+})
+
+users.patch('/edit/:username', (req, res) => {
+    const data = req.body
+    connection.query('update happychildren.user_account set fullName = ?, address = ?, phoneNumber = ?, email = ? where username = ?', [data.fullName, data.address, data.phoneNumber, data.email, req.params.username], (err, result) => {
+        if(err) {
+            res.status(404).send({
+                message: err
+            })
+        } else res.status(200).send({
+            message: 'update information success'
+        })
+    })
+})
+
+users.patch('/changepassword/:username', (req, res) => {
+    const data = req.body
+    connection.query('update happychildren.user_account set password = ? where username = ?', [data.password, req.params.username], (err, result) => {
+        if(err) {
+            res.status(404).send({
+                message: err
+            })
+        } else res.status(200).send({
+            message: 'change password success'
         })
     })
 })
