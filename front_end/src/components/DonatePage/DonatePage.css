@@ -1,0 +1,237 @@
+  .DonatePage {
+    position: relative;
+    width: 1304px;
+    height: 2070px;
+  
+    background: #FFFFFF;
+    border-radius: 10px;
+  }
+  .AboutUs {
+    position: absolute;
+    width: 75px;
+    height: 20px;
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+  
+  
+  color: #000000;
+  }
+  
+  .ClickForCorporations{
+  
+    position: absolute;
+    width: 220px;
+    height: 72px;
+    left: 383px;
+    top: 558px;
+  
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    /* border: 2px solid #EB6446; */
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+  }
+  .ButtonText{
+  
+    position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    /* or 114% */
+  
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    top: 20px;
+    color: rgb(235, 100, 70);
+    margin: auto;
+    text-align: center;
+  
+  }
+
+  .ButtonSubText{
+    width: 211px;
+    height: 60px;
+    left: 44px;
+    top: 20px;
+    
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+  }
+  
+  .DetailText{
+    position: absolute;
+    width: 972px;
+    height: 274px;
+    left: 166px;
+    top: 275px;
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 16px;
+    /* or 73% */
+  
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  
+    color: #000000;
+  
+    mix-blend-mode: normal;
+  }
+  .DetailSubText{
+    position: absolute;
+    width: 936px;
+    height: 37px;
+    left: 203px;
+    top: 434px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    /* or 107% */
+    
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    
+    color: #000000;
+  }
+  
+  .TaxBenefitsButton{
+
+
+    position: absolute;
+    width: 220px;
+    height: 72px;
+    left: 735px;
+    top: 558px;
+
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    border: 2px solid #808080;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+  }
+  .DonateButton{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 125px;
+    top: 1000px;
+  
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+  .DonateButtonText{
+    position: absolute;
+    height: 60px;
+
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+  
+    color: #EB6446;
+  
+  }
+
+  .BottomFrame{
+    position: absolute;
+    width: 1152px;
+    height: 856px;
+    left: 76px;
+    top: 1100px;
+
+    background: #FFFFFF;
+  }
+
+  .NormalText{
+    position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .LargeNormalText{
+    position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #000000;
+  }
+
+  .SmallNormalText{
+    position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+  }
+
+  .Line{
+    position: absolute;
+    height: 0px;
+
+    border: 1px solid #000000;
+  }
+
+  .ImgResize{
+    position: absolute;
+    width: 240px;
+    height: 134px;
+    left: auto;
+    top: auto;
+  }
+
+  .DonateImgTitle{
+    position: absolute;
+    width: 240px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+  }
