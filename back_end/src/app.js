@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken'
 import bodyParser from 'body-parser'
 import userRoutes from './routes/users/users.js'
 import newsRoutes from './routes/news/news.js'
+import transactionRoutes from './routes/transaction/transaction.js'
 import express from 'express'
 
 const PORT = process.env.PORT || 4552
@@ -14,6 +15,7 @@ app.use(bodyParser.json())
 
 app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/news', newsRoutes)
+app.use('/api/v1/transaction', transactionRoutes)
 
 app.use('/', (req, res) => {
     res.send('<h1>Hello from homepage</h1>')
