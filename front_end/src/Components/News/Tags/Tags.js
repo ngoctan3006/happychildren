@@ -5,7 +5,7 @@ import SmallTag from './SmallTag'
 export default function Tags() {
     const small_tags = ["Human", "Resources", "Activities"]
     return (
-        <div>
+        <div className="Tags">
             <BigTag name="Spots on"/>
 
             {small_tags.map(tag => (

@@ -38,15 +38,53 @@
 }
 
 
-/* News */
-/* Tags */
-/* Big tag */
 .BigTag {
-  background-color: #61dafb;
-  border-radius: 25;
-  display: inline-block;
+  background: #FEEBD4;
+  border-radius: 25px;
   font-size: x-large;
   font-style: normal;
   font-weight: bold;
-  color: #EB6446;
+  padding: auto;
+  display: block;
+}
+
+.small_tag {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(171, 229, 242, 0.65);
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 0.5cm;
+}
+
+.Spots_element {
+  margin-top: 0.5cm;
+  margin-bottom: 1cm;
+}
+
+.Spots_element #image {
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.Spots_element #date {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  color: rgba(128, 128, 128, 0.78);
+}
+
+.Spots_element #category {
+  background: rgba(253, 219, 179, 0.56);
+  border-radius: 15px;
+  padding: auto;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
 }
