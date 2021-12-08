@@ -1,4 +1,5 @@
 import connection from '../../database/mysql.js'
+import { v4 as uuidv4 } from 'uuid'
 import express from 'express'
 
 const users = express.Router()
@@ -10,20 +11,20 @@ users.get('/', (req, res) => {
                 message: err
             })
         } else {
-            res.status(200).send({ result })
+            res.status(200).send(result)
         }
     })
 })
 
 users.post('/register', (req, res) => {
     const data = req.body
-    connection.query('insert into happychildren.user_account (username, password, fullName, email) values (?, ?, ?, ?)', [data.username, data.password, data.fullName, data.email], (err, result) => {
+    connection.query('insert into happychildren.user_account (accountID, username, password, fullName, email) values (?, ?, ?, ?, ?)', [uuidv4(), data.username, data.password, data.fullName, data.email], (err, result) => {
         if(err) {
             if(err.code === 'ER_DUP_ENTRY') {
-                res.status(401).send({
+                res.status(409).send({
                     message: 'username already in use'
                 })
-            } else res.status(404).send({ 
+            } else res.status(404).send({
                 message: err
             })
         } else res.status(201).send({
@@ -62,9 +63,9 @@ users.patch('/edit/:username', (req, res) => {
     })
 })
 
-users.patch('/changepassword/:username', (req, res) => {
+users.patch('/password/:username', (req, res) => {
     const data = req.body
-    connection.query('update happychildren.user_account set password = ? where username = ?', [data.password, req.params.username], (err, result) => {
+    connection.query('update happychildren.user_account set password = ? where username = ? and password = ?', [data.old, data.new, req.params.username], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
