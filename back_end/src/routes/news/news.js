@@ -12,7 +12,7 @@ news.get('/', (req, res) => {
                     message: err
                 })
             } else {
-                res.status(200).send({ result })
+                res.status(200).send(result)
             }
         })
     } else {
@@ -22,7 +22,7 @@ news.get('/', (req, res) => {
                     message: err
                 })
             } else {
-                res.status(200).send({ result })
+                res.status(200).send(result)
             }
         })
     }
@@ -35,20 +35,20 @@ news.get('/trash', (req, res) => {
                 message: err
             })
         } else {
-            res.status(200).send({ result })
+            res.status(200).send(result)
         }
     })
 })
 
 news.get('/:id', (req, res) => {
     const id = req.params.id
-    connection.query('select * from happychildren.post_news where id = ? order by updatedAt desc', [id], (err, result) => {
+    connection.query('select * from happychildren.post_news where id = ?', [id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
             })
         } else {
-            res.status(200).send({ result })
+            res.status(200).send(result)
         }
     })
 })
