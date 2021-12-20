@@ -7,11 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon src/app.js",
-<<<<<<< HEAD
-    "start": "nodemon src/app.js"
-=======
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/app.js"
->>>>>>> 957f6d64022d6a195bfa9edba3109a5ea7fcff1f
   },
   "repository": {
     "type": "git",
