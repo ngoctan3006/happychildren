@@ -9,7 +9,7 @@ transaction.get('/', (req, res) => {
             res.status(404).send({
                 message: err
             })
-        } else res.status(200).send({ result })
+        } else res.status(200).send(result)
     })
 })
 
