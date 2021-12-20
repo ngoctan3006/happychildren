@@ -1,4 +1,4 @@
-import connection from '../../database/mysql.js'
+import connection from '../../database'
 import express from 'express'
 
 const news = express.Router()
