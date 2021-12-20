@@ -1,10 +1,11 @@
-import jwt from 'jsonwebtoken'
 import bodyParser from 'body-parser'
-import userRoutes from './routes/users/users.js'
-import newsRoutes from './routes/news/news.js'
-import transactionRoutes from './routes/transaction/transaction.js'
-import productsRoutes from './routes/products/products.js'
 import express from 'express'
+import {
+    userRoutes,
+    newsRoutes,
+    transactionRoutes,
+    productsRoutes
+} from './routes'
 
 const PORT = process.env.PORT || 4552
 

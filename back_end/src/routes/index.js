@@ -1,0 +1,6 @@
+// export { default as centerRoutes } from './center'
+// export { default as exchangeRoutes } from './exchange'
+export { default as newsRoutes } from './news'
+export { default as productsRoutes } from './products'
+export { default as transactionRoutes } from './transaction'
+export { default as userRoutes } from './users'
