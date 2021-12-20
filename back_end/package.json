@@ -1,12 +1,17 @@
 {
   "name": "happychildren",
   "version": "1.0.0",
-  "description": "",
+  "description": "IT4552 project",
   "main": "src/app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon src/app.js",
+<<<<<<< HEAD
     "start": "nodemon src/app.js"
+=======
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/app.js"
+>>>>>>> 957f6d64022d6a195bfa9edba3109a5ea7fcff1f
   },
   "repository": {
     "type": "git",
@@ -16,22 +21,22 @@
     "happy",
     "children"
   ],
-  "author": "mminzwoo4155",
+  "author": "tan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mminzwoo4155/happychildren/issues"
   },
   "homepage": "https://github.com/mminzwoo4155/happychildren#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-generator": "^4.16.1",
-    "express-handlebars": "^6.0.2",
-    "morgan": "^1.10.0",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.15",
-    "pug": "^3.0.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.2"
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

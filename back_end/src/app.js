@@ -1,28 +1,27 @@
-const express = require('express')
-const morgan = require('morgan')
-const handlebars = require('express-handlebars')
-const path = require('path')
-const { dirname } = require('path')
+import bodyParser from 'body-parser'
+import express from 'express'
+import {
+    userRoutes,
+    newsRoutes,
+    transactionRoutes,
+    productsRoutes
+} from './routes'
+
+const PORT = process.env.PORT || 4552
+
 const app = express()
-const port = 3000
 
-//HTTP logger
-app.use(morgan('combined'))
+app.use(bodyParser.json())
 
+app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/news', newsRoutes)
+app.use('/api/v1/transaction', transactionRoutes)
+app.use('/api/v1/products', productsRoutes)
 
-//Template engine
-// app.engine('handlebars', handlebars());
-app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'resources\\views'))
-
-app.get('/home', (req, res) => {
-  return res.render('home')
+app.use('/', (req, res) => {
+    res.send('<h1>Hello from homepage</h1>')
 })
 
-app.get('/donate', (req, res) => {
-  return res.render('donate')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`HappyChildren App is running on PORT ${PORT}`)
 })
