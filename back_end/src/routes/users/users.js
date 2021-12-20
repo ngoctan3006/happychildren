@@ -1,4 +1,4 @@
-import connection from '../../database/mysql.js'
+import connection from '../../database'
 import { v4 as uuidv4 } from 'uuid'
 import express from 'express'
 
