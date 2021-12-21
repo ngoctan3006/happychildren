@@ -51,7 +51,7 @@ users.post('/login', (req, res) => {
         } else {
             bcrypt.compare(data.password, results[0].password, (err, result) => {
                 if (result) {
-                    const accessToken = jwt.sign(data, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
+                    const accessToken = jwt.sign({ username: data.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
                     res.status(200).send(accessToken)
                 } else {
                     res.status(500).send({
