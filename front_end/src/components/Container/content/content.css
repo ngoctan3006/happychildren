@@ -1,0 +1,508 @@
+.content{
+    margin-top: 20px;
+    max-width: 990px;
+    margin: auto;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .05em;
+}
+img {
+    max-width:100%;
+    height:auto ;
+}
+.content--text{
+    text-align: center;
+}
+.content--textInner{
+    color: #EB6446;
+    line-height: 3.6rem;
+    font-weight: bold;
+    font-size: 38px;
+    letter-spacing: .1rem;
+    font-family: "Noto Sans JP";
+}
+
+.content--img{
+    margin-top: 20px;
+
+}
+.content--img img{
+    width: 100%;
+}
+/*  */
+.leadSect {
+    margin-top: 100px;
+}
+.sectTit{
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: normal;
+}
+.leadSect .sectMain{
+    margin-top: 60px;
+    display: flex;
+    align-items:center;
+}
+.txtBlock{
+    flex :1;
+}
+.txtBlock p {
+    line-height: 2.4;
+    font-size: 15px;
+    font-weight: 500;
+}
+.illust {
+    /* flex-basis: 40%; */
+    margin-right: -180px;
+    width: 50%;
+    margin-left: 40px;
+}
+.illust img {
+    width: 100%;
+}
+/*  */
+.childSect {
+    margin-top: 120px;
+}
+.cmnSectTit {
+    font-size: 36px;
+
+}
+.sectMain {
+    margin-top: 50px;
+}
+.c-lineHeading::after{
+    display: block;
+    height: 1px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+    content: '';
+    position: relative;
+    margin: 0 auto;
+    background-color: #004c72;
+}
+.c-lineHeading:after {
+    width: 100px;
+    margin-top: 5px;
+}
+
+.childSect .leadBlock {
+    padding-right: 150px;
+}
+.childSect .txtBlock {
+    display: flex;
+}
+.childSect .txtBlock .photo {
+    width: 330px;
+    margin-left: -150px;
+}
+.photo img {
+    border-radius: 20px;
+    max-width: 330px;
+    height: auto;
+}
+
+.childSect .txtBlock .txtBox {
+    flex: 1;
+    margin-left: 60px;
+}
+
+.leadBlock p {
+    line-height: 2.4;
+    font-size: 15px;
+    font-weight: 500;
+}
+/* issue */
+.issueSect {
+    margin-top: 110px;
+}
+.issueSect .sectMain {
+    margin-top: 10px;
+}
+.issueSect .leadBlock {
+    max-width: 700px;
+    margin-top: 30px;
+    text-align: center;
+}
+.issueSect .leadBlock {
+    margin: 0 auto;
+}
+.issueSect .leadBlock .illust {
+    margin : auto;
+}
+.issueSect .leadBlock .illust img {
+    width: 278px;
+}
+.issueSect .itemBlockWrap {
+    display: flex;
+    margin: 0 -60px;
+}
+.issueSect .itemBlockWrap {
+    position: relative;
+}
+.issueSect .itemBlockWrap>* {
+    width: 50%;
+    padding: 0 60px;
+}
+.issueSect .itemBlockWrap>* {
+    box-sizing: border-box;
+}
+
+.issueSect .itemBlockWrap .itemBlock .titBox {
+    min-height: 250px;
+}
+.issueSect .itemBlockWrap .itemBlock .titBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.issueSect .itemBlockWrap .itemBlock .titBox:before {
+    width: 250px;
+    height: 250px;
+}
+.issueSect .itemBlockWrap .itemBlock .titBox:before {
+    position: absolute;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+    content: '';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50% 50%;
+    background-color: #e2eff5;
+}
+.issueSect .itemBlockWrap .itemBlock .titBox .blockTit {
+    margin-top: 5px;
+    font-size: 24px;
+    
+}
+.issueSect .itemBlockWrap .itemBlock .titBox .blockTit {
+    font-weight: bold;
+    line-height: 1.4;
+}
+.issueSect .itemBlockWrap .itemBlock .titBox>* {
+    position: relative;
+    z-index: 1;
+}
+
+.issueSect .itemBlockWrap .cross {
+    position: absolute;
+    top: 125px;
+    width: 2px;
+    height: 100px;
+}
+ .issueSect .itemBlockWrap .cross {
+    left: 50%;
+    padding: 0;
+    transform: translate(-50%, -50%);
+}
+
+.issueSect .itemBlockWrap>* {
+    width: 50%;
+    padding: 0 60px;
+}
+.issueSect .itemBlockWrap>* {
+    box-sizing: border-box;
+}
+.issueSect .itemBlockWrap .cross:before {
+    transform: rotate(45deg);
+}
+.issueSect .itemBlockWrap .cross:after {
+    transform: rotate(-45deg);
+}
+.issueSect .itemBlockWrap .cross:before, .issueSect .itemBlockWrap .cross:after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+    content: '';
+    left: 50%;
+    top: 0%;
+    background-color: #EB6446;
+}
+.issueSect .itemBlockWrap .itemBlock .blockMain {
+    margin-top: 30px;
+    font-size: 18px;
+
+}
+
+/*  */
+
+.programSect {
+    margin-top: 140px;
+}
+.programSect .infoBlock {
+    display: flex;
+    margin-top: 60px;
+}
+.programSect .infoBlock.-reverse {
+    flex-direction: row-reverse;
+}
+.programSect .infoBlock .txtBox {
+    flex: 1;
+}
+.programSect .infoBlock.-reverse .txtBox {
+    margin-left: 100px;
+}
+.programSect .infoBlock .blockTit {
+    font-weight: bold;
+    color: #EB6446;
+}
+.programSect .infoBlock .lead {
+    font-weight: bold;
+    line-height: 1.8;
+}
+.programSect .infoBlock .txt {
+    margin-top: 10px;
+}
+.programSect .infoBlock .thumb {
+    width: 26%;
+}
+.programSect .infoBlock .thumb span {
+    display: block;
+}
+.programSect .infoBlock.-reverse .thumb span {
+    margin-left: -150px;
+}
+
+.programSect .infoBlock:not(.-reverse) .txtBox {
+    margin-right: 100px;
+}
+.programSect .infoBlock:not(.-reverse) .thumb span {
+    margin-right: -150px;
+}
+
+/*  */
+.visionSect {
+    margin-top: 100px;
+}
+.visionSect .sectMain {
+    margin-top: 30px;
+}
+.visionSect .catch {
+    font-size: 32px;
+}
+.visionSect .catch {
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+    color: #EB6446;
+}
+/*  */
+
+.missionSect {
+    margin-top: 110px;
+}
+
+.missionSect .sectMain {
+    margin-top: 30px;
+}
+.missionSect .catch {
+    font-size: 32px;
+    
+}
+.missionSect .catch {
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+    color: #EB6446;
+}
+
+.missionSect .lead {
+    margin-top: 10px;
+    font-size: 22px;
+}
+.missionSect .lead {
+    font-weight: bold;
+    line-height: 1.6;
+    text-align: center;
+}
+.cmnSectTit2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .1em;
+    color: #004c72;
+}
+.cmnSectTit2:after {
+    width: 40px;
+    margin-top: 10px;
+}
+/*  */
+.bg-messageSect {
+    position: relative;
+}
+.messageSect {
+    margin-top: 120px;
+    padding: 80px 0;
+}
+.messageSect {
+    position: relative;
+}
+.messageSect:before {
+    position: absolute;
+    z-index: -3;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+    content: '';
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+    background: #f4f4f4;
+}
+
+.messageSect .sectTit {
+    font-size: 32px;
+    font-weight: 500;
+}
+.messageSect .sectTit {
+    line-height: 1.8;
+    text-align: center;
+}
+.messageSect>* {
+    position: relative;
+    z-index: 1;
+}
+.messageSect .sectMain {
+    margin-top: 30px;
+}
+
+.messageSect .visualBlock .photo {
+    text-align: center;
+}
+
+.messageSect .visualBlock .photo img {
+    max-width: 600px;
+    border-radius: 20px;
+}
+
+.page-en .messageSect .txtBlock {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.u-mt20 {
+    margin-top: 20px !important;
+}
+
+.messageSect .profileBlock {
+    display: flex;
+    margin-top: 20px;
+}
+.messageSect .profileBlock {
+    line-height: 1.8;
+}
+
+.messageSect .profileBlock .txtBox {
+    flex: 1;
+    font-size: 18px;
+}
+
+.messageSect .profileBlock .illust {
+    width: 50%;
+    text-align: center;
+}
+
+.messageSect .profileBlock .illust img {
+    max-width: 383px;
+    margin-bottom: -240px;
+}
+/* Way to help */
+.waySect {
+    margin-top: 200px;
+}
+
+.waySect .itemList {
+    display: flex;
+    margin: 0 -20px;
+}
+.waySect .itemList>li {
+    width: 33.333%;
+    padding: 0 20px;
+}
+.waySect .itemList>li {
+    box-sizing: border-box;
+}
+.waySect .itemList>li .liInner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.waySect .itemList>li .txtBox {
+    margin-top: 10px;
+}
+
+.waySect .itemList>li .txtBox .tit {
+    font-size: 20px;
+}
+
+.waySect .itemList>li .txtBox .tit {
+    font-weight: bold;
+}
+
+.waySect .itemList>li .txtBox .txt {
+    margin-top: 5px;
+    font-size: 18px;
+}
+.waySect .itemList>li .txtBox .txt {
+    line-height: 1.7;
+}
+
+.waySect .btnBlock {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.c-button.-big {
+    min-width: 330px;
+    padding: 30px 40px;
+    font-size: 16px;
+}
+
+.c-button.-orange {
+    color: #EB6446;
+    border-color: #EB6446;
+}
+
+.c-button.-blue {
+    color: #004c72;
+    border-color: #004c72;
+}
+
+.c-button {
+    min-width: 200px;
+    padding: 15px 40px;
+    border-width: 2px;
+    font-size: 14px;
+}
+
+.c-button {
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0.1em;
+    letter-spacing: .1em;
+    border: solid #e1e1e1;
+    border-radius: 100em;
+    background-color: #fff;
+}
