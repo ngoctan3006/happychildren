@@ -1,0 +1,78 @@
+.header .mobile_navigation
+  display: none
+
+.header .navigation
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background-color: white
+  padding: 0 80px
+
+  .logo a
+    display: inline-block
+    padding: 6px 8px
+    img
+      width: auto
+      height: 48px
+
+  .menu
+    .item
+      color: #666666
+      font-size: 14px
+      line-height: 20px
+      font-weight: 500
+      text-decoration: none
+      display: inline-block
+      padding: 21px 16px
+      transition: .2s ease
+      border-bottom: 2px solid transparent
+      &:hover
+        color: #2A82C4
+        border-bottom-color: #2A82C4
+
+@media (max-width: 1199.98px)
+  .header .navigation
+    display: none
+  .header .mobile_navigation
+    display: block
+    position: relative
+    .logo
+      padding: 8px 16px
+      text-align: center
+      img
+        width: auto
+        height: 40px
+    .menu_icon
+      cursor: pointer
+      position: absolute
+      left: 24px
+      top: 50%
+      transform: translateY(-50%)
+      z-index 1
+    .menu_list
+      position: fixed
+      left: 0
+      top: 0
+      z-index 2
+      width: 100vw
+      height: 100vh
+      background-color: white
+      opacity: 0
+      visibility: hidden
+      transition: .2s ease
+      &.active
+        opacity: 1
+        visibility: visible
+      .menu_close
+        display: inline-block
+        padding: 16px 24px
+        cursor: pointer
+      .item
+        display: block
+        font-weight: 500
+        font-size: 20px
+        line-height: 28px
+        text-align: center
+        color: #2A82C4
+        text-decoration: none
+        padding: 16px

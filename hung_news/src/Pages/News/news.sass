@@ -1,0 +1,179 @@
+.heading
+  text-align: center
+  line-height: 1.2
+  font-size: 2rem
+
+
+.tags
+  width: 1000px
+  display: flex
+  margin: 0 auto
+  margin-top: 100px
+  margin-bottom: 20px
+  .tags_wrapper
+    display: block
+    button
+      padding: 10px 20px
+      display: inline-block
+      text-decoration: none
+      background-color: white
+      border: 2px solid #e1e1e1
+      border-radius: 100em
+      margin-bottom: 10px
+
+    .list_tags
+      list-style: none
+      display: flex
+      flex-wrap: wrap
+      margin-right: 0px 20px 0px 5px
+      align-items: center
+      .list_tags_name
+        border-radius: 5px
+        background: #c3e0e9
+        padding: 0px 20px
+        font-size: 16px
+        margin: 5px 20px 10px 0px
+
+
+.title
+  width: 1000px
+  display: flex
+  margin: 0 auto
+  span
+    margin-top: 40px
+    display: block
+    line-height: 1.2
+    font-size: 2rem
+  span::after 
+    position: absolute
+    margin-left: 20px
+    width: 788px
+    height: 1px
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: 100% auto
+    content: ''
+    border-color: black
+    top: auto
+    border-bottom: 2px solid #e1e1e1
+
+
+.news
+  padding: 30px 38px
+  img
+    border-radius: 30px
+  .news_list_grid
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width: 1000px
+    margin: 0 auto
+    .news_list_item
+      width: calc((100% - 150px)/3)
+      margin-top: 32px
+      .news_list_item_image
+        margin-bottom: 16px 
+        img
+          height: 210.49px
+          width: 280.66px
+      .news_list_item_title
+          margin-bottom: 12px
+          font-weight: bold
+          font-size: 14px
+          line-height: 20px
+      .news_list_item_info
+        display: flex
+        align-items: center
+        margin: 5px 0px
+        .news_list_item_time
+          font-weight: bold
+          font-size: 16px
+          line-height: 18px
+          color: #AAAAAA
+        .news_list_item_tag
+          margin-left: 20px
+          border-radius: 5px
+          background: #c3e0e9
+          padding: 0px 10px
+          font-size: 14px
+        
+    
+  .news_list
+    width: 1000px
+    display: flex
+    flex-wrap: wrap
+    margin: 0 auto
+    .news_list_item        
+      display: flex
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+      justify-content: center
+      .news_list_item_image
+        margin: 15px 0
+        img
+          width: 420px
+          height: 315px
+      .news_list_item_content
+        margin: 30px
+        .news_list_item_info
+          display: flex
+          align-items: center
+          .news_list_item_time
+            font-weight: bold
+            font-size: 16px
+            line-height: 18px
+            color: #AAAAAA
+            margin-bottom: 20px
+          .news_list_item_tag
+            margin-left: 20px
+            border-radius: 5px
+            background: #c3e0e9
+            padding: 0px 10px
+            font-size: 14px
+            margin-bottom: 20px
+        .news_list_item_title
+          font-weight: bold
+          margin-bottom: 20px
+        .news_list_item_desc
+
+  .news_navigation
+    border-top: 1px solid rgba(0, 0, 0, 0.1) 
+    padding-top: 24px
+    display: flex
+    justify-content: center
+    .news_navigation_item
+      font-size: 14px
+      line-height: 20px
+      font-weight: 500
+      width: 40px
+      height: 40px
+      border-radius: 4px
+      text-align: center
+      margin-right: 8px
+      cursor: pointer
+      color: #666666
+      background-color: white
+      border: 1px solid rgba(127, 150, 179, 0.302994)
+      transition: .2s ease
+      display: flex
+      align-items: center
+      justify-content: center
+      &.active, &:hover
+        color: white
+        background: linear-gradient(138.36deg, #1D48E3 0%, #1DACE3 94.78%)
+      &:last-child
+        margin-right: 0
+        margin-left: -8px
+        padding: 6px 3px
+      &:first-child
+        padding: 6px 3px
+        margin-right: 0
+    .news_navigation_transparent
+      background: transparent
+      color: #327FE9
+      border: 0
+      img
+        width: auto
+      &:hover img
+        filter: brightness(0) invert(1)
+    .news_navigation_left
+      transform: rotate(180deg)
