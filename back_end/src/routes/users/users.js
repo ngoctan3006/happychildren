@@ -9,9 +9,10 @@ import { v4 as uuidv4 } from 'uuid'
 const users = express.Router()
 
 dotenv.config()
+const DB_NAME = process.env.DB_NAME
 
 users.get('/', authenToken, (req, res) => {
-    connection.query('select * from happychildren.user_account', (err, results) => {
+    connection.query(`select * from ${DB_NAME}.user_account`, (err, results) => {
         if (err) {
             res.status(404).send({
                 message: err
@@ -25,7 +26,7 @@ users.get('/', authenToken, (req, res) => {
 users.post('/register', (req, res) => {
     const data = req.body
     bcrypt.hash(data.password, Number.parseInt(process.env.SALT_ROUND), (err, hash) => {
-        connection.query('insert into happychildren.user_account (accountID, username, password, fullName, email) values (?, ?, ?, ?, ?)', [uuidv4(), data.username, hash, data.fullName, data.email], (error, results) => {
+        connection.query(`insert into ${DB_NAME}.user_account (accountID, username, password, fullName, email) values (?, ?, ?, ?, ?)`, [uuidv4(), data.username, hash, data.fullName, data.email], (error, results) => {
             if (error) {
                 if (error.code === 'ER_DUP_ENTRY') {
                     res.status(409).send({
@@ -41,7 +42,7 @@ users.post('/register', (req, res) => {
 
 users.post('/login', (req, res) => {
     const data = req.body
-    connection.query('select accountID, password from happychildren.user_account where username = ?', [data.username], (error, results) => {
+    connection.query(`select accountID, password from ${DB_NAME}.user_account where username = ?`, [data.username], (error, results) => {
         if (error) {
             res.status(404).send(error)
         } else if (!results[0]) {
@@ -65,7 +66,7 @@ users.post('/login', (req, res) => {
 
 users.patch('/edit/:username', (req, res) => {
     const data = req.body
-    connection.query('update happychildren.user_account set fullName = ?, address = ?, phoneNumber = ?, email = ? where username = ?', [data.fullName, data.address, data.phoneNumber, data.email, req.params.username], (err, results) => {
+    connection.query(`update ${DB_NAME}.user_account set fullName = ?, address = ?, phoneNumber = ?, email = ? where username = ?`, [data.fullName, data.address, data.phoneNumber, data.email, req.params.username], (err, results) => {
         if (err) {
             res.status(404).send(err)
         } else res.status(200).send({
@@ -76,7 +77,7 @@ users.patch('/edit/:username', (req, res) => {
 
 users.patch('/password/:username', (req, res) => {
     const data = req.body
-    connection.query('update happychildren.user_account set password = ? where username = ? and password = ?', [data.old, data.new, req.params.username], (err, results) => {
+    connection.query(`update ${DB_NAME}.user_account set password = ? where username = ? and password = ?`, [data.old, data.new, req.params.username], (err, results) => {
         if (err) {
             res.status(404).send(err)
         } else res.status(200).send({
