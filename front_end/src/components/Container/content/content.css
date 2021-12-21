@@ -2,7 +2,7 @@
     margin-top: 20px;
     max-width: 990px;
     margin: auto;
-    font-family: "Lato","Noto Sans JP","游ゴシック体",YuGothic,"游ゴシック","Yu Gothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",Osaka,sans-serif !important;
+    font-family: 'Lato', sans-serif;
     letter-spacing: .05em;
 }
 img {
@@ -18,6 +18,7 @@ img {
     font-weight: bold;
     font-size: 38px;
     letter-spacing: .1rem;
+    font-family: "Noto Sans JP";
 }
 
 .content--img{
@@ -411,7 +412,7 @@ img {
     font-size: 18px;
 }
 
-.page-en .messageSect .profileBlock .illust {
+.messageSect .profileBlock .illust {
     width: 50%;
     text-align: center;
 }
@@ -419,4 +420,89 @@ img {
 .messageSect .profileBlock .illust img {
     max-width: 383px;
     margin-bottom: -240px;
+}
+/* Way to help */
+.waySect {
+    margin-top: 200px;
+}
+
+.waySect .itemList {
+    display: flex;
+    margin: 0 -20px;
+}
+.waySect .itemList>li {
+    width: 33.333%;
+    padding: 0 20px;
+}
+.waySect .itemList>li {
+    box-sizing: border-box;
+}
+.waySect .itemList>li .liInner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.waySect .itemList>li .txtBox {
+    margin-top: 10px;
+}
+
+.waySect .itemList>li .txtBox .tit {
+    font-size: 20px;
+}
+
+.waySect .itemList>li .txtBox .tit {
+    font-weight: bold;
+}
+
+.waySect .itemList>li .txtBox .txt {
+    margin-top: 5px;
+    font-size: 18px;
+}
+.waySect .itemList>li .txtBox .txt {
+    line-height: 1.7;
+}
+
+.waySect .btnBlock {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.c-button.-big {
+    min-width: 330px;
+    padding: 30px 40px;
+    font-size: 16px;
+}
+
+.c-button.-orange {
+    color: #EB6446;
+    border-color: #EB6446;
+}
+
+.c-button.-blue {
+    color: #004c72;
+    border-color: #004c72;
+}
+
+.c-button {
+    min-width: 200px;
+    padding: 15px 40px;
+    border-width: 2px;
+    font-size: 14px;
+}
+
+.c-button {
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0.1em;
+    letter-spacing: .1em;
+    border: solid #e1e1e1;
+    border-radius: 100em;
+    background-color: #fff;
 }

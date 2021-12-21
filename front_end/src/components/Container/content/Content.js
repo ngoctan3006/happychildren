@@ -1,5 +1,5 @@
 import './content.css';
-
+import { Link } from "react-router-dom";
 function Content() {
     return (
         <div className="content">
@@ -187,6 +187,58 @@ function Content() {
                 </div>
             </section>
             </div>
+            <section class="waySect">
+                <div class="sectInner">
+                    <h2 class="sectTit cmnSectTit  c-lineHeading">Ways to help</h2>
+                    <div class="sectMain">
+                    <ul class="itemList">
+                        <li>
+                        <div class="liInner">
+                            <div class="txtBox">
+                            <div class="tit">5,000 yen</div>
+                            <p class="txt">This donation will pay for a starter kit (hair dryer, electric kettle, etc.) for a
+                                youth starting to live on his/her own.</p>
+                            </div>
+                            <figure class="thumb"><img src="https://www.b4s.jp/wp-content/themes/b4s/assets/images/en/way_img01.jpg" alt=""/></figure>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="liInner">
+                            <div class="txtBox">
+                            <div class="tit">10,000 yen</div>
+                            <p class="txt">This donation will pay for in-depth one-on-one support for a youth starting to live on
+                                his/her own.</p>
+                            </div>
+                            <figure class="thumb"><img src="https://www.b4s.jp/wp-content/themes/b4s/assets/images/en/way_img02.jpg" alt=""/></figure>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="liInner">
+                            <div class="txtBox">
+                            <div class="tit">30,000 yen</div>
+                            <p class="txt">This donation will pay for a paid internship opportunity for a youth looking for a new
+                                job. The youth is paid in cash according to the number of days worked.</p>
+                            </div>
+                            <figure class="thumb"><img src="https://www.b4s.jp/wp-content/themes/b4s/assets/images/en/way_img03.jpg" alt=""/></figure>
+                        </div>
+                        </li>
+                    </ul>
+                    <div class="btnBlock">
+                        <div class="btn">
+                            <Link 
+                            class="c-button -blue -big" 
+                            to="/summarize">Summarize</Link>
+                        </div>
+                        <div class="btn">
+                            <Link 
+                            class="c-button -orange -big" 
+                            to="/donate"
+                            >Donation</Link>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

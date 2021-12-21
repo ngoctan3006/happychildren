@@ -1,6 +1,6 @@
-import {Container, Row, Col, } from 'react-bootstrap';
 import images from './img';
 import "./header.css";
+import{ Link} from 'react-router-dom';
 function Header() {
     return (
         <div className="header">
@@ -17,26 +17,38 @@ function Header() {
                         <div className="header__menu">
                             <ul className="header__list">
                                 <li className="list--item menu--info">
-                                    <a className="info" href="#">私たちについて</a>
+                                    <a className="info" href="#">About Us</a>
                                     <div className="info__dropdown info--content">
                                         <div className="info--contentInner">
-                                            <a href="#">ブリッジフォースマイルとは</a>    
+                                            <a href="#">About Us</a>    
                                             <a href="#">団体概要</a>    
                                             <a href="#">メディア掲載</a>    
                                             <a href="#">会計報告・年次報告書</a>   
                                         </div> 
                                     </div>
                                 </li>
-                                <li className="list--item"><a href="#">「親を頼れない」子どもの現状</a></li>
-                                <li className="list--item"><a href="#">ニュース・活動報告</a></li>
-                                <li className="list--item"><a href="#">巣立ち支援</a></li>
-                                <li className="list--item"><a href="#">サポーター活動</a></li>
-                                <li className="list--item"><a href="#">お問い合わせ</a></li>
+                                <li className="list--item"><a href="#">About Children</a></li>
+                                <li className="list--item"><a href="#">News・Volunteers</a></li>
+                                <li className="list--item"><a href="#">Philanthropists</a></li>
+                                <li className="list--item"><a href="#">Help</a></li>
                             </ul>
                         </div>
-                        <div className="header__donateButton">
-                            <a>寄付・入会のお願い</a>
-                        </div>
+                        
+                        <button type="button" class="btn btn-success">
+                            <Link
+                            to='/login'
+                            >
+                                Login
+                            </Link>
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary">
+                            <Link
+                            to='/signup'
+                            >
+                                Sign Up
+                            </Link>
+                        </button>
+                        
                         <ul class="p-header__langList f-en">
                             <li class="-jp active"><a href="/">JP</a></li>
                             <li class="-en"><a href="/en/">VN</a></li>
