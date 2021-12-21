@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "./news.sass";
 // import { Link } from "react-router-dom";
-import {tags, news_list, news_list_grid} from './data.js';
+import { tags, news_list, news_list_grid } from './data.js';
 
 const News = () => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const News = () => {
               tags.map((item, index) => (
                 <div className="list_tags_name">{item.name}</div>
               ))
-              }
+            }
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ const News = () => {
             news_list.map((item, index) => (
               <div className="news_list_item">
                 <div className="news_list_item_image">
-                  <img src={item.image} alt=""/>
+                  <img src={item.image} alt="" />
                 </div>
                 <div className="news_list_item_content">
                   <div className="news_list_item_info">
