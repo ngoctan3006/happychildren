@@ -1,1 +1,1 @@
-export { default } from './mysql'
+export { default } from './sqlite'

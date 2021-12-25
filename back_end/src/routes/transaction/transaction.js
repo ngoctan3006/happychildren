@@ -1,14 +1,10 @@
-import connection from '../../database/mysql.js'
+import db from '../../database'
 import express from 'express'
-import dotenv from 'dotenv'
 
 const transaction = express.Router()
 
-dotenv.config()
-const DB_NAME = process.env.DB_NAME
-
 transaction.get('/', (req, res) => {
-    connection.query(`select * from ${DB_NAME}.transaction order by createdAt`, (err, result) => {
+    db.all(`select * from transaction order by createdAt`, (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -18,7 +14,7 @@ transaction.get('/', (req, res) => {
 })
 
 transaction.post('/create', (req, res) => {
-    connection.query()
+    db.all()
 })
 
 export default transaction

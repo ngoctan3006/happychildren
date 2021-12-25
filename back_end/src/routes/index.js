@@ -2,7 +2,7 @@ import userRoutes from './users'
 import newsRoutes from './news'
 import transactionRoutes from './transaction'
 import productsRoutes from './products'
-// import centerRoutes  from './center'
+import centerRoutes  from './center'
 // import exchangeRoutes  from './exchange'
 
 export default app => {
@@ -10,6 +10,7 @@ export default app => {
     app.use('/api/v1/news', newsRoutes)
     app.use('/api/v1/transaction', transactionRoutes)
     app.use('/api/v1/products', productsRoutes)
+    app.use('/api/v1/center', centerRoutes)
 
     app.use('/', (req, res) => {
         res.send('<h1>Vào đây làm cái gì =)))</h1>')

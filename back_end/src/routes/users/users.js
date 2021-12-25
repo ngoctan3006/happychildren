@@ -1,22 +1,19 @@
 import express from 'express'
-import connection from '../../database'
+import db from '../../database'
 import authenToken from '../auth'
 import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
+import bcrypt from 'bcrypt'
 import { v4 as uuidv4 } from 'uuid'
+
+dotenv.config()
 
 const users = express.Router()
 
-dotenv.config()
-const DB_NAME = process.env.DB_NAME
-
 users.get('/', authenToken, (req, res) => {
-    connection.query(`select * from ${DB_NAME}.user_account`, (err, results) => {
+    db.all('select * from user_account', (err, results) => {
         if (err) {
-            res.status(404).send({
-                message: err
-            })
+            res.status(404).send(err)
         } else {
             res.status(200).send(results)
         }
@@ -26,9 +23,9 @@ users.get('/', authenToken, (req, res) => {
 users.post('/register', (req, res) => {
     const data = req.body
     bcrypt.hash(data.password, Number.parseInt(process.env.SALT_ROUND), (err, hash) => {
-        connection.query(`insert into ${DB_NAME}.user_account (accountID, username, password, fullName, email) values (?, ?, ?, ?, ?)`, [uuidv4(), data.username, hash, data.fullName, data.email], (error, results) => {
+        db.all(`insert into user_account (accountID, username, password, fullName, email) values (?, ?, ?, ?, ?)`, [uuidv4(), data.username, hash, data.fullName, data.email], (error, results) => {
             if (error) {
-                if (error.code === 'ER_DUP_ENTRY') {
+                if (error.code === 'SQLITE_CONSTRAINT') {
                     res.status(409).send({
                         message: 'username already in use'
                     })
@@ -42,7 +39,7 @@ users.post('/register', (req, res) => {
 
 users.post('/login', (req, res) => {
     const data = req.body
-    connection.query(`select accountID, password from ${DB_NAME}.user_account where username = ?`, [data.username], (error, results) => {
+    db.all(`select accountID, password from user_account where username = ?`, [data.username], (error, results) => {
         if (error) {
             res.status(404).send(error)
         } else if (!results[0]) {
@@ -52,7 +49,7 @@ users.post('/login', (req, res) => {
         } else {
             bcrypt.compare(data.password, results[0].password, (err, result) => {
                 if (result) {
-                    const accessToken = jwt.sign({ username: data.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '300s' })
+                    const accessToken = jwt.sign({ username: data.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: process.env.EXPIRES_TIME })
                     res.status(200).send({
                         token: accessToken
                     })
@@ -68,7 +65,7 @@ users.post('/login', (req, res) => {
 
 users.patch('/edit/:username', (req, res) => {
     const data = req.body
-    connection.query(`update ${DB_NAME}.user_account set fullName = ?, address = ?, phoneNumber = ?, email = ? where username = ?`, [data.fullName, data.address, data.phoneNumber, data.email, req.params.username], (err, results) => {
+    db.all(`update user_account set fullName = ?, address = ?, phoneNumber = ?, email = ? where username = ?`, [data.fullName, data.address, data.phoneNumber, data.email, req.params.username], (err, results) => {
         if (err) {
             res.status(404).send(err)
         } else res.status(200).send({
@@ -79,7 +76,7 @@ users.patch('/edit/:username', (req, res) => {
 
 users.patch('/password/:username', (req, res) => {
     const data = req.body
-    connection.query(`update ${DB_NAME}.user_account set password = ? where username = ? and password = ?`, [data.old, data.new, req.params.username], (err, results) => {
+    db.all(`update user_account set password = ? where username = ? and password = ?`, [data.new, req.params.username, data.old], (err, results) => {
         if (err) {
             res.status(404).send(err)
         } else res.status(200).send({

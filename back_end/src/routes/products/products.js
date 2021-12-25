@@ -1,16 +1,12 @@
-import connection from '../../database'
+import db from '../../database'
 import express from 'express'
-import dotenv from 'dotenv'
 
 const products = express.Router()
-
-dotenv.config()
-const DB_NAME = process.env.DB_NAME
 
 products.get('/', (req, res) => {
     const sort = req.query.sort
     if(sort) {
-        connection.query(`select * from ${DB_NAME}.products where not deleted order by point ${sort}`, (err, result) => {
+        db.all(`select * from products where not deleted order by point ${sort}`, (err, result) => {
             if(err) {
                 res.status(404).send({
                     message: err
@@ -20,7 +16,7 @@ products.get('/', (req, res) => {
             }
         })
     } else {
-        connection.query(`select * from ${DB_NAME}.products where not deleted`, (err, result) => {
+        db.all(`select * from products where not deleted`, (err, result) => {
             if(err) {
                 res.status(404).send({
                     message: err
@@ -33,7 +29,7 @@ products.get('/', (req, res) => {
 })
 
 products.get('/trash', (req, res) => {
-    connection.query(`select * from ${DB_NAME}.products where deleted`, (err, result) => {
+    db.all(`select * from products where deleted`, (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -45,7 +41,7 @@ products.get('/trash', (req, res) => {
 })
 
 products.get('/:id', (req, res) => {
-    connection.query(`select * from ${DB_NAME}.products where productID = ?`, [req.params.id], (err, result) => {
+    db.all(`select * from products where productID = ?`, [req.params.id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -58,7 +54,7 @@ products.get('/:id', (req, res) => {
 
 products.post('/create', (req, res) => {
     const data = req.body
-    connection.query(`insert into ${DB_NAME}.products (name, point, detail, category) values (?, ?, ?, ?)`, [data.name, data.point, data.detail, data.category], (err, result) => {
+    db.all(`insert into products (name, point, detail, category) values (?, ?, ?, ?)`, [data.name, data.point, data.detail, data.category], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -71,7 +67,7 @@ products.post('/create', (req, res) => {
 
 products.patch('/edit/:id', (req, res) => {
     const data = req.body
-    connection.query(`update ${DB_NAME}.products set name = ?, point = ?, detail = ?, category = ? where productID = ?`, [data.name, data.point, data.detail, data.category, req.params.id], (err, result) => {
+    db.all(`update products set name = ?, point = ?, detail = ?, category = ? where productID = ?`, [data.name, data.point, data.detail, data.category, req.params.id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -83,7 +79,7 @@ products.patch('/edit/:id', (req, res) => {
 })
 
 products.patch('/delete/:id', (req, res) => {
-    connection.query(`update ${DB_NAME}.products set deleted = true where productID = ?`, [req.params.id], (err, result) => {
+    db.all(`update products set deleted = 1 where productID = ?`, [req.params.id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -95,7 +91,7 @@ products.patch('/delete/:id', (req, res) => {
 })
 
 products.patch('/restore/:id', (req, res) => {
-    connection.query(`update ${DB_NAME}.products set deleted = false where productID = ?`, [req.params.id], (err, result) => {
+    db.all(`update products set deleted = 0 where productID = ?`, [req.params.id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
@@ -107,7 +103,7 @@ products.patch('/restore/:id', (req, res) => {
 })
 
 products.post('/hdelete/:id', (req, res) => {
-    connection.query(`delete from ${DB_NAME}.products where productID = ?`, [req.params.id], (err, result) => {
+    db.all(`delete from products where productID = ?`, [req.params.id], (err, result) => {
         if(err) {
             res.status(404).send({
                 message: err
